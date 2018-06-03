@@ -1,5 +1,3 @@
-<% avatars = ['https://relayfm.s3.amazonaws.com/uploads/user/avatar/68/user_avatar_Davidsmith_artwork.png', 'http://endlesstheme.com/Endless1.5.1/img/user2.jpg', 'https://www.microsoft.com/en-us/research/wp-content/uploads/2017/11/avatar_user_36692_1511968805.jpg'] %>
-
 <div class="column is-one-third">
   <%= link_to flat_path(flat) do %>
     <div class="card" style="border-radius: 4px;">
@@ -12,7 +10,7 @@
         <div class="media">
           <div class="media-left">
             <figure class="image is-48x48">
-              <%= image_tag avatars.sample, style: 'border-radius: 50%; margin-top: 4px' %>
+              <%= image_tag flat.avatar, style: 'border-radius: 50%; margin-top: 4px' %>
             </figure>
           </div>
           <div class="media-content">
@@ -23,7 +21,7 @@
 
         <div class="content">
         <p><%= flat.description %></p>
-        <p style="font-size: 12px; text-align: right;"><%= (Time.now - rand(15552000)).strftime('on %d %B %Y') %></p>
+        <p style="font-size: 12px; text-align: right;">on <%= flat.publication_date %></p>
         </div>
       </div>
     </div>
