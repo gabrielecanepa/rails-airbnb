@@ -1,0 +1,7 @@
+<section class="flats">
+  <div class="columns">
+    <% @flats.each do |flat| %>
+      <%= render 'shared/card', flat: flat %>
+    <% end %>
+  </div>
+</section>
