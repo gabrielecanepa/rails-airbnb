@@ -1,29 +1,31 @@
 <% avatars = ['https://relayfm.s3.amazonaws.com/uploads/user/avatar/68/user_avatar_Davidsmith_artwork.png', 'http://endlesstheme.com/Endless1.5.1/img/user2.jpg', 'https://www.microsoft.com/en-us/research/wp-content/uploads/2017/11/avatar_user_36692_1511968805.jpg'] %>
 
 <div class="column is-one-third">
-  <div class="card">
-    <div class="card-image">
-      <figure class="image is-4by3">
-        <%= image_tag flat.image %>
-      </figure>
-    </div>
-    <div class="card-content">
-      <div class="media">
-        <div class="media-left">
-          <figure class="image is-48x48">
-            <%= image_tag avatars.sample, style: 'border-radius: 50%;' %>
-          </figure>
-        </div>
-        <div class="media-content">
-          <p class="title is-4"><%= flat.name %></p>
-          <p class="subtitle is-6"><%= flat.address %></p>
-        </div>
+  <%= link_to flat_path(flat) do %>
+    <div class="card" style="border-radius: 4px;">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <%= image_tag flat.image %>
+        </figure>
       </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <%= image_tag avatars.sample, style: 'border-radius: 50%; margin-top: 4px' %>
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4"><%= flat.name %></p>
+            <p class="subtitle is-6" style="font-size: 12px;"><%= flat.address %></p>
+          </div>
+        </div>
 
-      <div class="content">
-        <%= flat.description %>
-        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        <div class="content">
+        <p><%= flat.description %></p>
+        <p style="font-size: 12px; text-align: right;"><%= (Time.now - rand(15552000)).strftime('on %d %B %Y') %></p>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
