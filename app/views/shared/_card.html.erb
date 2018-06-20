@@ -1,9 +1,9 @@
 <div class="column is-one-third">
   <%= link_to flat_path(flat) do %>
-    <div class="card" style="border-radius: 4px;">
+    <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">
-          <%= image_tag flat.image %>
+          <%= image_tag flat.image, class: 'card-picture' %>
         </figure>
       </div>
       <div class="card-content">
@@ -20,8 +20,8 @@
         </div>
 
         <div class="content">
-        <p><%= flat.description %></p>
-        <p style="font-size: 12px; text-align: right;">on <%= flat.publication_date %></p>
+          <p><%= flat.description %></p>
+          <p style="font-size: 12px; text-align: right;"><%= flat.publication_date %></p>
         </div>
       </div>
     </div>

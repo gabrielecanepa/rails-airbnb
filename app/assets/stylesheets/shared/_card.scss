@@ -1,0 +1,15 @@
+.card {
+  border-radius: 4px;
+
+  .card-picture {
+    border-radius: 4px 4px 0 0;
+  }
+
+  &:hover {
+    top: -6px;
+    .card-content {
+      padding-bottom: calc(1.5rem + 6px);
+    }
+  }
+}
+
